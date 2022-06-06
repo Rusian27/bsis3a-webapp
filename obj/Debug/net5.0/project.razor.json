@@ -15664,6 +15664,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Type\\Create.cshtml",
+      "TargetPath": "Views\\Type\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Item\\Index.cshtml",
       "TargetPath": "Views\\Item\\Index.cshtml",
       "FileKind": "mvc"
