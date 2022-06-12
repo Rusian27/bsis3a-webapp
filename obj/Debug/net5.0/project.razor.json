@@ -15619,8 +15619,18 @@
   "RootNamespace": "bsis3a_webapp",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Type\\Delete.cshtml",
+      "TargetPath": "Views\\Type\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Instrument\\Create.cshtml",
+      "TargetPath": "Views\\Instrument\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15631,6 +15641,11 @@
     {
       "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Instrument\\Index.cshtml",
+      "TargetPath": "Views\\Instrument\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15676,6 +15691,11 @@
     {
       "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Item\\Edit.cshtml",
       "TargetPath": "Views\\Item\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\LARRY\\bsis3a-webapp\\Views\\Type\\Edit.cshtml",
+      "TargetPath": "Views\\Type\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

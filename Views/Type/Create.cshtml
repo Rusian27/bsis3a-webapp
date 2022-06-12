@@ -11,7 +11,7 @@
     <div class="form-group">
         <label asp-for="Items"></label>
         <select asp-for="Type.ItemId" asp-items="Model.selectListItem(Model.Items)" class="form-control"></select>
-        <span asp-validation-for="Items" class="text-danger"></span>
+        <span asp-validation-for="Type.ItemId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Type.Name"></label>

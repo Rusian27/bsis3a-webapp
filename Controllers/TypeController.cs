@@ -26,7 +26,7 @@ namespace bsis3a_webapp.Controllers
                 Type = new Models.Type()
             };   
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             var type = _db.Types.Include(m=> m.Item);
@@ -49,6 +49,7 @@ namespace bsis3a_webapp.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            TypeVM.Items = _db.Items.ToList();
             return View(TypeVM);
         }
 
