@@ -83,32 +83,30 @@ namespace bsis3a_webapp.Controllers
             return View(InstrumentVM);
         }
 
-        // [HttpGet]
-        // public IActionResult Edit(int id)
-        // {
-            // TypeVM.Type = _db.Types.Include(m => m.Item).SingleOrDefault(m => m.Id == id);
-            // if(TypeVM.Type == null)
-            // {
-                // return NotFound();
-            // }
-            // return View(TypeVM);
-        // }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            InstrumentVM.Instrument = _db.Instruments.Include(m => m.Item).SingleOrDefault(m => m.Id == id);
+            if(InstrumentVM.Instrument== null)
+            {
+                return NotFound();
+            }
+            return View(InstrumentVM);
+       }
 
-        // [HttpPost]
-        // [ActionName("Edit")]
-        // public IActionResult EditPost()
-        // {
-            // if(ModelState.IsValid)
-            // {
-                // _db.Types.Update(TypeVM.Type);
-                // _db.SaveChanges();
-                // return RedirectToAction("Index");
-            // }
-            // return View(TypeVM);
-        // }
-
-         
-
+         [HttpPost]
+        [ActionName("Edit")]
+        public IActionResult EditPost()
+       {
+            if(ModelState.IsValid)
+            {
+                _db.Instruments.Update(InstrumentVM.Instrument);
+                _db.SaveChanges();
+               return RedirectToAction("Index");
+            }
+            return View(InstrumentVM);
+       }
+ 
         [HttpPost]
         [ActionName("Delete")]
         public IActionResult Delete(int id)
