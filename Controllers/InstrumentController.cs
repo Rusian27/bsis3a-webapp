@@ -53,8 +53,19 @@ namespace bsis3a_webapp.Controllers
             if(ModelState.IsValid)
             {
                 _db.Instruments.Add(InstrumentVM.Instrument); 
-                _db.SaveChanges();
                 
+                _db.SaveChanges();
+
+                
+
+                SaveImage();
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(InstrumentVM);
+        }
+     public void SaveImage()
+        {
                 var InstrumentId = InstrumentVM.Instrument.Id;
 
                 string wwwrootPath = _hostingEnvironment.WebRootPath;
@@ -75,25 +86,20 @@ namespace bsis3a_webapp.Controllers
                         files[0].CopyTo(fileStream);
                     }
                     saveInstrument.ImagePath = RelativeImagePath;
-                    _db.SaveChanges();
                 }
-
-                return RedirectToAction("Index");
-            }
-            return View(InstrumentVM);
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            InstrumentVM.Instrument = _db.Instruments.Include(m => m.Item).SingleOrDefault(m => m.Id == id);
+            InstrumentVM.Instrument = _db.Instruments.Include(m => m.Item).Include(m => m.Type).SingleOrDefault(m => m.Id == id);
             if(InstrumentVM.Instrument== null)
             {
                 return NotFound();
             }
             return View(InstrumentVM);
        }
-
+       
          [HttpPost]
         [ActionName("Edit")]
         public IActionResult EditPost()
@@ -101,7 +107,9 @@ namespace bsis3a_webapp.Controllers
             if(ModelState.IsValid)
             {
                 _db.Instruments.Update(InstrumentVM.Instrument);
-                _db.SaveChanges();
+                
+               SaveImage();
+               _db.SaveChanges();
                return RedirectToAction("Index");
             }
             return View(InstrumentVM);
